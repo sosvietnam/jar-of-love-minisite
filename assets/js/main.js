@@ -11,6 +11,21 @@ $(document).ready(function() {
         submitText = 'SEND';
     }
 
+    $('.js-currency').on('keydown', function(e) {
+        var reg = /[0-9]/gi;
+        var functionKeys = ['Backspace', 'Shift', 'Home', 'End', 'Delete'];
+        if (!e.key.match(reg) && functionKeys.indexOf(e.key) < 0) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    $('.js-currency').on('keyup', function(e) {
+        var trueValue = e.target.value.replace(/\./gi, '');
+
+        e.target.value = trueValue.replace(/\B(?=(\d{3})+(?!\d))/g, ".");        
+    });
+
     $('#contact-form').on('submit', function(e) {
         e.preventDefault();
 
@@ -28,7 +43,7 @@ $(document).ready(function() {
             address: form.address.value,
             province: form.province.value,
             country: form.country.value,
-            childno: form.childno.value,
+            childno: form.childno.value + (lang === 'en' ? ' USD' : ' VND'),
             useragent: navigator.userAgent,
 			language: lang
         });
