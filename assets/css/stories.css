@@ -40,13 +40,14 @@
 
 .stories p {
     margin-bottom: 20px;
+    font-size: 20px;
 }
 
 .stories-img {
     width: 100%;
 }
 
-@media screen and (min-width: 768px) and (max-width: 992px){
+@media screen and (min-width: 768px) and (max-width: 991px){
     .stories-image-container {
         height: 225px;
         position: relative;
@@ -72,5 +73,11 @@
 
     .stories {
         margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .stories p {
+        padding-right: 40px;
     }
 }
