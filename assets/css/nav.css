@@ -18,7 +18,27 @@ nav.navbar {
   font-weight: 400;
 }
 
-@media (min-width: 768px) and (max-width: 992px) {
+.navbar .sponsor-now-btn {
+  background-color: #009ee0;
+  color: white;
+  padding-top: 6px;
+  padding-bottom: 4px;
+  margin-top: 10px;
+  height: auto;
+  text-transform: uppercase;
+  margin-left: 20px;
+}
+
+.navbar .sponsor-now-btn--mobile {
+  display: none;
+}
+
+.navbar .sponsor-now-btn:hover {
+  background-color: #009ee0;
+  color: white;
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
   nav.navbar {
     height: 56px;
   }
@@ -36,6 +56,11 @@ nav.navbar {
   .container> .navbar-header {
     float: none;
     display: none;
+  }
+
+  .navbar-nav > li > a {
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }
 
@@ -68,5 +93,15 @@ nav.navbar {
 
   .navbar-collapse {
     border-bottom: 1px solid #8F8F8F;
+  }
+
+  .navbar .sponsor-now-btn {
+    display: none;
+  }
+
+  .navbar .sponsor-now-btn--mobile {
+    display: inline-block;
+    float: right;
+    margin-right: 20px;
   }
 }
